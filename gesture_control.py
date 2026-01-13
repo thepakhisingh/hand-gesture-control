@@ -7,7 +7,7 @@ import time
 # Disable pyautogui fail-safe (mouse to corner)
 pyautogui.FAILSAFE = False
 
-# Screen size
+# For Screen size
 screen_w, screen_h = pyautogui.size()
 
 # MediaPipe setup
@@ -33,7 +33,7 @@ def distance(p1, p2):
 def fingers_up(lm):
     fingers = []
 
-    # Thumb (left/right independent)
+    # Thumb
     fingers.append(lm[4].x < lm[3].x)
 
     # Other fingers
@@ -85,7 +85,7 @@ while True:
             # Timed gestures
             now = time.time()
             if now - last_action_time > ACTION_DELAY:
-
+            #my favourite and easiest part!! conditions only
                 # Open palm → Play / Pause
                 if count == 5:
                     pyautogui.press("playpause")
@@ -123,3 +123,5 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
+
+#you can use this code and if any problem occurs do see full tutorial on codewithpakhi.com
